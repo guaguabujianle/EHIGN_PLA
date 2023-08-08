@@ -1,12 +1,12 @@
 ## Note
-Implementation of other baselines can be found in https://github.com/guaguabujianle/GIGN  
+Implementation of other baselines can be found on [GIGN](https://github.com/guaguabujianle/GIGN).
 
 ## Dataset
-All data used in this paper are publicly available and can be accessed here:  
-- PDBbind v2016 and v2019: http://www.pdbbind.org.cn/download.php
-- 2013 and 2016 core sets: http://www.pdbbind.org.cn/casf.php
+All data used in this paper are publicly available at the following locations:
+- **PDBbind v2016 and v2019:** [pdbbind](http://www.pdbbind.org.cn/download.php)
+- **2013 and 2016 core sets:** [casf](http://www.pdbbind.org.cn/casf.php)
 
-You can download the preprocessed data from: https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link
+The preprocessed data can be downloaded from [Graphs](https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link).
 
 ## Requirements  
 dgl==0.9.0  
@@ -20,6 +20,50 @@ scipy==1.5.2
 torch==1.10.2  
 tqdm==4.63.0  
 openbabel==3.3.1 (conda install -c conda-forge openbabel)
+
+
+## Descriptions of Folders and Files
+- **`./data`:** Contains information about various datasets. Download and organize preprocessed datasets as described.
+- **`./config`:** Parameters used in EHIGN.
+- **`./log`:** Logger.
+- **`./model`:** Contains model checkpoints and training records.
+- **Scripts and Implementations:** Various Python files implementing models, preprocessing, training, and testing.
+
+## Step-by-step Running
+
+### 1. Model Training
+- Download the preprocessed datasets and organize them in the `./data` folder.
+- Run `python train.py`.
+
+### 2. Model Testing
+- Run `python test.py` (modify file paths in the source code if necessary).
+
+### 3. Process Raw Data
+- Run a demo using provided examples:
+  - `python preprocess_complex.py`
+  - `python graph_constructor.py`
+  - `python train_example.py`
+
+### 4. Test the Trained Model in Other External Test Sets
+- Organize the data as described.  
+  -data  
+  &ensp;&ensp;-external_test  
+  &ensp; &ensp;&ensp;&ensp; -pdb_id  
+  &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_ligand.mol2  
+  &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_protein.pdb  
+  - Execute the following commands:
+    - `python preprocess_complex.py`
+    - `python graph_constructor.py`
+    - `python test.py`
+    - (Modify file paths in the source code if necessary)
+
+### 5. Cold Start Settings
+- Use datasets found in the `./cold_start_data` folder.
+- Execute scripts `train_random.py`, `train_scaffold.py`, and `train_sequence.py` if the original training set has been processed.
+
+
+
+
 
 ## Descriptions of folders and files
 + **./data**: This folder contains information about train, valid, test2013, test2016, and test2019 data sets. You should first download the preprocessed datasets from https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link, and put them into this folder and organize them as './data/train', './data/valid', './data/test2013/', './data/test2016/', and  './data/test2019/'. We also provide a toy set with 50 examples to explain how to process raw data and train EHIGN model from scratch. 
