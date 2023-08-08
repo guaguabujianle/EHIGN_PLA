@@ -45,17 +45,18 @@ openbabel==3.3.1 (conda install -c conda-forge openbabel)
   - `python train_example.py`
 
 ### 4. Test the Trained Model in Other External Test Sets
-- Organize the data as described.  
+- Organize the data like.  
   -data  
   &ensp;&ensp;-external_test  
   &ensp; &ensp;&ensp;&ensp; -pdb_id  
   &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_ligand.mol2  
-  &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_protein.pdb  
-  - Execute the following commands:
-    - `python preprocess_complex.py`
-    - `python graph_constructor.py`
-    - `python test.py`
-    - (Modify file paths in the source code if necessary)
+  &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_protein.pdb
+  
+- Execute the following commands:
+  - `python preprocess_complex.py`
+  - `python graph_constructor.py`
+  - `python test.py`
+  - (Modify file paths in the source code if necessary)
 
 ### 5. Cold Start Settings
 - Use datasets found in the `./cold_start_data` folder.
