@@ -20,7 +20,9 @@ scikit_learn==1.1.2
 scipy==1.5.2  
 torch==1.10.2  
 tqdm==4.63.0  
-openbabel==3.3.1 (conda install -c conda-forge openbabel)
+openbabel==3.3.1 (conda install -c conda-forge openbabel)  
+
+Alternatively, install the environment using the provided YAML file at `./environment.yaml`.
 
 
 ## Descriptions of Folders and Files
