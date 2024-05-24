@@ -1,5 +1,5 @@
 ## Note
-Implementation of other baselines can be found on [GIGN](https://github.com/guaguabujianle/GIGN).
+Implementation of other baselines can be found on [GIGN](https://github.com/guaguabujianle/GIGN).  
 This repository contains the source code for PLA prediction. For structure-based virtual screening (SBVS), please refer to our dedicated repository at [EHIGN_SBVS on GitHub](https://github.com/guaguabujianle/EHIGN_SBVS).
 
 ## Dataset
